@@ -1,0 +1,9 @@
+set guioptions-=T
+if has("win32")
+    if has("gui_win32")
+        colorscheme molokai
+        set cursorline              " Find the current line a lot quicker
+        set guifont=Consolas:h13
+        au GUIEnter * simalt ~x
+    endif
+endif
