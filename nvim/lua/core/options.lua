@@ -56,6 +56,8 @@ vim.opt.fileencoding = "utf-8"         -- Default file encoding to utf-8
 vim.opt.shortmess:append("Is")         -- No intro msg and no "Search hit BOTTOM" message
 vim.opt.iskeyword:append("-")          -- Consider hyphenated words as a single word
 
+vim.opt.cmdheight = 0
+
 -- Use rg
 vim.opt.grepprg = [[rg --glob "!.git" --no-heading --vimgrep --follow $*]]
 vim.opt.grepformat = vim.opt.grepformat ^ { "%f:%l:%c:%m" }

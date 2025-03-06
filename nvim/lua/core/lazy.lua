@@ -24,5 +24,6 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
     require("plugins.gruvbox"),
     require("plugins.neo-tree"),
-    require("plugins.bufferline")
+    require("plugins.bufferline"),
+    require("plugins.lualine")
 })
