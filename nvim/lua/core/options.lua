@@ -1,3 +1,9 @@
+-- Avoiding all the module warnings with healthcheck
+vim.g.loaded_node_provider = 0
+vim.g.loaded_perl_provider = 0
+vim.g.loaded_python3_provider = 0
+vim.g.loaded_ruby_provider = 0
+
 if vim.g.neovide then
     vim.opt.guifont = "JetBrainsMono Nerd Font:h13"
     vim.g.neovide_transparency = 0.9 -- content and title bar, both should be transparent
