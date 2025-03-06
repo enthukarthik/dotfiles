@@ -22,6 +22,7 @@ vim.opt.rtp:prepend(lazypath)
 
 -- Load custom plugins
 require("lazy").setup({
-	require("plugins.gruvbox"),
-	require("plugins.neo-tree")
+    require("plugins.gruvbox"),
+    require("plugins.neo-tree"),
+    require("plugins.bufferline")
 })
