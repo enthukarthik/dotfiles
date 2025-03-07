@@ -22,12 +22,13 @@ vim.opt.rtp:prepend(lazypath)
 
 -- Load custom plugins
 require("lazy").setup({
-    require("plugins.gruvbox"),
-    require("plugins.neo-tree"),
-    require("plugins.bufferline"),
-    require("plugins.lualine"),
-    require("plugins.nvim-treesitter"),
-    require("plugins.telescope"),
-    require("plugins.nvim-lspconfig"),
-    require("plugins.nvim-cmp")
+  require("plugins.gruvbox"),
+  require("plugins.neo-tree"),
+  require("plugins.bufferline"),
+  require("plugins.lualine"),
+  require("plugins.nvim-treesitter"),
+  require("plugins.telescope"),
+  require("plugins.nvim-lspconfig"),
+  require("plugins.nvim-cmp"),
+  require("plugins.none-ls"),
 })

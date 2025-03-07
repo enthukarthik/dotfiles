@@ -9,11 +9,11 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 
--- Disable <Space> key in normal and visual modes 
+-- Disable <Space> key in normal and visual modes
 vim.keymap.set({ "n", "v" }, "<Space>", "<Nop>", { silent = true })
 
 -- Easy escape to normal mode
-vim.keymap.set({ "i", "v" }, "jk", "<Esc>",{ noremap = true, silent = true, desc = "Escape to normal mode,from INSERT or VISUAL, quicker with jk" })
+vim.keymap.set({ "i", "v" }, "jk", "<Esc>", { noremap = true, silent = true, desc = "Escape to normal mode,from INSERT or VISUAL, quicker with jk" })
 
 -- Allow moving the cursor through wrapped lines with j, k
 vim.keymap.set({ "n" }, "k", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
@@ -78,21 +78,21 @@ vim.keymap.set({ "v", "x" }, ">", ">gv", { noremap = true, silent = true, desc =
 vim.keymap.set({ "v", "x" }, "<", "<gv", { noremap = true, silent = true, desc = "Select the same visual selection once we're done with indentation" })
 
 -- Other keybindings
-vim.keymap.set({ "n" }, "x",'"_x' , { noremap = true, silent = true, desc = "Single char deletion shouldn't change register" })
-vim.keymap.set({ "v" }, "p",'"_dP' , { noremap = true, silent = true, desc = "Pasting small content shouldn't change yank register" })
+vim.keymap.set({ "n" }, "x", '"_x', { noremap = true, silent = true, desc = "Single char deletion shouldn't change register" })
+vim.keymap.set({ "v" }, "p", '"_dP', { noremap = true, silent = true, desc = "Pasting small content shouldn't change yank register" })
 vim.keymap.set({ "n" }, "<Esc>", "<cmd>nohlsearch<CR>", { noremap = true, silent = true, desc = "Clear highlighted text when pressing Esc in normal mode" })
 vim.keymap.set({ "n" }, "<leader>sa", "ggVG", { noremap = true, silent = true, desc = "Select all..." })
 vim.keymap.set({ "n" }, "<leader>ia", "gg=G", { noremap = true, silent = true, desc = "Indent all..." })
 vim.keymap.set({ "n" }, "<leader>rm", ":%s/<C-q><C-m>//g<CR>", { noremap = true, silent = true, desc = "Remove ^M from text copied from windows to linux" })
 vim.keymap.set({ "n" }, "<leader>p", "<cmd>Lazy<CR>", { noremap = true, silent = true, desc = "Launch plugin manager" })
 vim.keymap.set({ "n" }, "<leader>q", "<cmd>wqa!<CR>", { noremap = true, silent = true, desc = "Save all and quit Neovim" })
-vim.keymap.set({ "n" }, "<leader>sn","<cmd>noautocmd w<CR>", { noremap = true, silent = true, desc = "Save file without any autoformatting" })
+vim.keymap.set({ "n" }, "<leader>sn", "<cmd>noautocmd w<CR>", { noremap = true, silent = true, desc = "Save file without any autoformatting" })
 vim.keymap.set({ "n" }, "<leader>w", "<cmd>w!<CR>", { noremap = true, silent = true, desc = "Save current file" })
 vim.keymap.set({ "n" }, "<leader>tw", "<cmd>set wrap!<CR>", { noremap = true, silent = true, desc = "Toggle wrap" })
 
 -- Toggle diagnostics
 vim.keymap.set({ "n" }, "<leader>do", function()
-    vim.diagnostic.enable(not vim.diagnostic.isenabled())
+  vim.diagnostic.enable(not vim.diagnostic.isenabled())
 end)
 
 -- Diagnostic keymaps
