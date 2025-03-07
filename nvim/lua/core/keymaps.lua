@@ -92,14 +92,12 @@ vim.keymap.set({ "n" }, "<leader>tw", "<cmd>set wrap!<CR>", { noremap = true, si
 
 -- Toggle diagnostics
 vim.keymap.set({ "n" }, "<leader>do", function()
-  vim.diagnostic.enable(not vim.diagnostic.isenabled())
-end)
+  vim.diagnostic.enable(not vim.diagnostic.is_enabled())
+end, { noremap = true, silent = true, desc = "Toggle diagnostics" })
 
 -- Diagnostic keymaps
-vim.keymap.set({ "n" }, "[d", vim.diagnostic.goto_prev, { desc = "Go to previous diagnostic message" })
-vim.keymap.set({ "n" }, "]d", vim.diagnostic.goto_next, { desc = "Go to next diagnostic message" })
-vim.keymap.set({ "n" }, "<leader>d", vim.diagnostic.open_float, { desc = "Open floating diagnostic message" })
-vim.keymap.set({ "n" }, "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostics list" })
+vim.keymap.set({ "n" }, "[d", vim.diagnostic.goto_prev, { noremap = true, silent = true, desc = "Go to previous diagnostic message" })
+vim.keymap.set({ "n" }, "]d", vim.diagnostic.goto_next, { noremap = true, silent = true, desc = "Go to next diagnostic message" })
 
 -- Save and load session
 vim.keymap.set({ "n" }, "<leader>ms", ":mksession! .session.vim<CR>", { noremap = true, silent = false, desc = "Save session" })
