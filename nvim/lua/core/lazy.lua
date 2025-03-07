@@ -31,4 +31,5 @@ require("lazy").setup({
   require("plugins.nvim-lspconfig"),
   require("plugins.nvim-cmp"),
   require("plugins.none-ls"),
+  require("plugins.vim-sleuth"),
 })

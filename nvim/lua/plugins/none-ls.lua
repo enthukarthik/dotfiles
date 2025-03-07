@@ -10,24 +10,36 @@ return {
     local formatting = null_ls.builtins.formatting -- to setup formatters
     local diagnostics = null_ls.builtins.diagnostics -- to setup linters
 
+    local formatters = {
+      "stylua", -- lua formatter
+      "shfmt", -- bash shell formatter
+      "prettier", -- for html, json, yaml, markdown
+    }
+
+    if vim.fn.has("win32") ~= 1 then
+      vim.list_extend(formatters, {
+        "checkmake", -- for Makefile. This linter is not available in win32
+      })
+    end
+
     -- list of formatters & linters for mason to install
     require("mason-null-ls").setup({
-      ensure_installed = {
-        "stylua", -- lua formatter
-        "checkmake", -- Makefile formatter
-        "shfmt", -- bash shell formatter
-        "prettier", -- for html, json, yaml & markdown
-      },
+      ensure_installed = formatters,
       -- auto-install configured formatters & linters (with null-ls)
       automatic_installation = true,
     })
 
     local sources = {
       formatting.stylua,
-      diagnostics.checkmake,
       formatting.shfmt.with({ args = { "-i", "4" } }), -- format with indentation of 4 spaces
       formatting.prettier.with({ filetypes = { "html", "json", "yaml", "markdown" } }),
     }
+
+    if vim.fn.has("win32") ~= 1 then
+      vim.list_extend(sources, {
+        diagnostics.checkmake,
+      })
+    end
 
     -- This function resolves a difference between neovim nightly (version 0.11) and stable (version 0.10)
     ---@param client vim.lsp.Client
