@@ -32,4 +32,5 @@ require("lazy").setup({
   require("plugins.nvim-cmp"),
   require("plugins.none-ls"),
   require("plugins.vim-sleuth"),
+  require("lua.plugins.indent-blankline"),
 })
