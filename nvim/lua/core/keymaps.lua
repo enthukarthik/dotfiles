@@ -91,16 +91,8 @@ vim.keymap.set({ "n" }, "<leader>w", "<cmd>w!<CR>", { noremap = true, silent = t
 vim.keymap.set({ "n" }, "<leader>tw", "<cmd>set wrap!<CR>", { noremap = true, silent = true, desc = "Toggle wrap" })
 
 -- Toggle diagnostics
-local diagnostics_active = true
-
 vim.keymap.set({ "n" }, "<leader>do", function()
-  diagnostics_active = not diagnostics_active
-
-  if diagnostics_active then
-    vim.diagnostic.enable(0)
-  else
-    vim.diagnostic.disable(0)
-  end
+    vim.diagnostic.enable(not vim.diagnostic.isenabled())
 end)
 
 -- Diagnostic keymaps

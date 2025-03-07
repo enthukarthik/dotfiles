@@ -13,7 +13,7 @@ return {
 
         local toggle_transparency = function()
             bg_transparency = not bg_transparency
-            new_opts = {
+            local new_opts = {
                 transparent_mode = bg_transparency
             }
             require("gruvbox").setup(new_opts)
@@ -22,4 +22,4 @@ return {
 
         vim.keymap.set({ "n" }, "<leader>bg", toggle_transparency, { noremap = true, silent = true, desc = "Toggle background transparency" })
     end
-} 
+}

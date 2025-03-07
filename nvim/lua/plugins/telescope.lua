@@ -102,7 +102,7 @@ return {
             vim.keymap.set("n", "<leader>fr", builtins.oldfiles, { noremap = true, silent = true, desc = "[F]ind from [R]ecent files" })
             vim.keymap.set("n", "<leader>fw", builtins.grep_string, { noremap = true, silent = true, desc = "[F]ind [W]ord under cursor in pwd" })
 
-            vim.keymap.set("n", "<leader>fs", function() 
+            vim.keymap.set("n", "<leader>fs", function()
                 builtins.lsp_document_symbols {
                     symbols = { "Class", "Function", "Method", "Constructor", "Interface", "Module", "Property" },
                 }
@@ -117,6 +117,7 @@ return {
                 builtins.find_files { cwd = vim.fn.stdpath("config") }
             end, { desc = "Edit Neovim config files" })
             vim.keymap.set("n", "<leader>ep", function()
+                ---@diagnostic disable-next-line
                 builtins.find_files { cwd = vim.fs.joinpath(vim.fn.stdpath("data"), "lazy") }
             end, { desc = "Edit Neovim package files" })
 

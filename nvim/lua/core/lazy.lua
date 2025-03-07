@@ -27,5 +27,6 @@ require("lazy").setup({
     require("plugins.bufferline"),
     require("plugins.lualine"),
     require("plugins.nvim-treesitter"),
-    require("plugins.telescope")
+    require("plugins.telescope"),
+    require("plugins.nvim-lspconfig")
 })

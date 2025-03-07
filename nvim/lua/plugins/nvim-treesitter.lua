@@ -5,13 +5,13 @@ return {
         dependencies = {
             "nvim-treesitter/nvim-treesitter-textobjects",
         },
-        config = function () 
+        config = function ()
             local configs = require("nvim-treesitter.configs")
             local ts_repeat_move = require("nvim-treesitter.textobjects.repeatable_move")
 
             configs.setup({
                 -- The first 8 parsers must be installed
-                ensure_installed = { "c", "lua", "luadoc", "vim", "vimdoc", "query", "markdown", "markdown_inline", 
+                ensure_installed = { "c", "lua", "luadoc", "vim", "vimdoc", "query", "markdown", "markdown_inline",
                     "angular", "arduino", "asm", "awk", "bash", "bibtex", "bicep", "c_sharp", "clojure", "cmake",
                     "comment", "commonlisp", "cpp", "css", "csv", "cuda", "diff", "disassembly", "dockerfile",
                     "doxygen", "editorconfig", "elixir", "erlang", "fish", "fsharp",
@@ -26,7 +26,7 @@ return {
                 sync_install = false,
                 auto_install = true,
                 highlight = { enable = true },
-                indent = { enable = true },  
+                indent = { enable = true },
                 incremental_selection = {
                     enable = true,
                     keymaps = {
