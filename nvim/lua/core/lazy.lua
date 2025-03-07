@@ -36,4 +36,5 @@ require("lazy").setup({
   require("plugins.which-key"),
   require("plugins.mini"),
   require("plugins.lazygit"),
+  require("plugins.toggleterm"),
 })
