@@ -8,11 +8,15 @@ return {
   config = function()
     local null_ls = require("null-ls")
     local formatting = null_ls.builtins.formatting -- to setup formatters
+    local diagnostics = null_ls.builtins.diagnostics -- to setup linters
 
     -- list of formatters & linters for mason to install
     require("mason-null-ls").setup({
       ensure_installed = {
         "stylua", -- lua formatter
+        "checkmake", -- Makefile formatter
+        "shfmt", -- bash shell formatter
+        "prettier", -- for html, json, yaml & markdown
       },
       -- auto-install configured formatters & linters (with null-ls)
       automatic_installation = true,
@@ -20,6 +24,9 @@ return {
 
     local sources = {
       formatting.stylua,
+      diagnostics.checkmake,
+      formatting.shfmt.with({ args = { "-i", "4" } }), -- format with indentation of 4 spaces
+      formatting.prettier.with({ filetypes = { "html", "json", "yaml", "markdown" } }),
     }
 
     -- This function resolves a difference between neovim nightly (version 0.11) and stable (version 0.10)

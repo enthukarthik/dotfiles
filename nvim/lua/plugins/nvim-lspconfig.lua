@@ -252,7 +252,7 @@ return {
     -- Basically it internally maps Mason package with nvim-lspconfig and call vim.lsp.start() accordingly
     require("mason-lspconfig").setup({
       ensure_installed = {}, -- explicitly set to an empty table (It populates installs via mason-tool-installer)
-      automatic_installation = false,
+      automatic_installation = false, -- It's better to configure language servers manually
       handlers = {
         function(server_name)
           local server = servers[server_name] or {}
