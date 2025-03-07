@@ -35,4 +35,5 @@ require("lazy").setup({
   require("plugins.indent-blankline"),
   require("plugins.which-key"),
   require("plugins.mini"),
+  require("plugins.lazygit"),
 })
