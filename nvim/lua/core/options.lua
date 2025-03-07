@@ -103,7 +103,7 @@ vim.opt.listchars = { tab = "→ ", trail = "·", extends = "»", precedes = "«
 -- Insert mode completion options
 -- Open a popup menu with possible completion options, even if there is only one possibility
 -- Don't select anything unless I've selected an option
-vim.opt.completeopt = "menuone,noselect,popup"
+vim.opt.completeopt = "menu,menuone,noinsert,noselect,popup"
 vim.opt.pumblend = 20   -- popup blend
 vim.opt.pumheight = 10   -- no. of entries in the popup
 
