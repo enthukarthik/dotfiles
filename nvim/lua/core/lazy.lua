@@ -34,4 +34,5 @@ require("lazy").setup({
   require("plugins.vim-sleuth"),
   require("plugins.indent-blankline"),
   require("plugins.which-key"),
+  require("plugins.mini"),
 })
