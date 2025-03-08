@@ -96,6 +96,7 @@ return {
       vim.keymap.set("n", "<leader>ff", builtins.find_files, { noremap = true, silent = true, desc = "[F]ind [F]iles in pwd" })
       vim.keymap.set("n", "<leader>fg", builtins.live_grep, { noremap = true, silent = true, desc = "[F]ind string in files by [G]rep" })
       vim.keymap.set("n", "<leader>fh", builtins.help_tags, { noremap = true, silent = true, desc = "[F]ind telescope [H]elp docs" })
+      vim.keymap.set("n", "<leader>fk", builtins.keymaps, { noremap = true, silent = true, desc = "[F]ind [K]eymaps configured" })
       vim.keymap.set("n", "<leader>fl", builtins.loclist, { noremap = true, silent = true, desc = "[F]ind [L]oclist items for the current window" })
       vim.keymap.set("n", "<leader>fm", builtins.marks, { noremap = true, silent = true, desc = "[F]ind [M]arks" })
       vim.keymap.set("n", "<leader>fq", builtins.quickfix, { noremap = true, silent = true, desc = "[F]ind [Q]uickfix items" })
