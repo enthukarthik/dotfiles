@@ -14,6 +14,7 @@ return {
       "stylua", -- lua formatter
       "shfmt", -- bash shell formatter
       "prettier", -- for html, json, yaml, markdown
+      "clang-format", -- c, cpp formatter
     }
 
     if vim.fn.has("win32") ~= 1 then
@@ -33,6 +34,7 @@ return {
       formatting.stylua,
       formatting.shfmt.with({ args = { "-i", "4" } }), -- format with indentation of 4 spaces
       formatting.prettier.with({ filetypes = { "html", "json", "yaml", "markdown" } }),
+      formatting.clang_format,
     }
 
     if vim.fn.has("win32") ~= 1 then
@@ -55,6 +57,17 @@ return {
       end
     end
 
+    local lsp_formatting = function(bufnr)
+      vim.lsp.buf.format({
+        async = false,
+        filter = function(client)
+          -- format only using null-ls
+          return client.name == "null-ls"
+        end,
+        bufnr = bufnr,
+      })
+    end
+
     local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
     null_ls.setup({
       -- debug = true, -- Enable debug mode. Inspect logs with :NullLsLog.
@@ -67,7 +80,7 @@ return {
             group = augroup,
             buffer = bufnr,
             callback = function()
-              vim.lsp.buf.format({ async = false })
+              lsp_formatting(bufnr)
             end,
           })
         end

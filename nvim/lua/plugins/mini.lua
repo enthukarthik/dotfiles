@@ -7,10 +7,10 @@ return {
       require("mini.icons").setup() -- enable icons
 
       -- Enable comment toggling
-      require("mini.comment").setup()
+      -- require("mini.comment").setup()
 
       -- Enable going forward/backward with square brackets
-      require("mini.bracketed").setup()
+      -- require("mini.bracketed").setup()
 
       -- Enable mini.surround
       require("mini.surround").setup()
