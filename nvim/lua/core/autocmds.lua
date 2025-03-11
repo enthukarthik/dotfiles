@@ -9,6 +9,14 @@ vim.api.nvim_create_autocmd("TextYankPost", {
   end,
 })
 
+vim.api.nvim_create_autocmd("FileType", {
+  desc = "Close some special filetype buffers",
+  pattern = { "qf", "checkhealth", "help" },
+  callback = function()
+    vim.keymap.set("n", "<leader>x", "<cmd>bd<cr>", { silent = true, buffer = true })
+  end,
+})
+
 -- HACK to remove any plugin that sets formatoptions tcro and tw for local buffers
 vim.cmd([[autocmd BufNewFile,BufRead,BufWinEnter * setlocal formatoptions-=t]])
 vim.cmd([[autocmd BufNewFile,BufRead,BufWinEnter * setlocal formatoptions-=c]])
