@@ -37,4 +37,5 @@ require("lazy").setup({
   require("plugins.mini"),
   require("plugins.lazygit"),
   require("plugins.toggleterm"),
+  require("plugins.nvim-colorizer"),
 })
