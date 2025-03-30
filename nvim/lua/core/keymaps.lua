@@ -96,8 +96,8 @@ vim.keymap.set({ "n" }, "<leader>do", function()
 end, { noremap = true, silent = true, desc = "Toggle diagnostics" })
 
 -- Diagnostic keymaps
-vim.keymap.set({ "n" }, "[d", vim.diagnostic.goto_prev, { noremap = true, silent = true, desc = "Go to previous diagnostic message" })
-vim.keymap.set({ "n" }, "]d", vim.diagnostic.goto_next, { noremap = true, silent = true, desc = "Go to next diagnostic message" })
+-- vim.keymap.set({ "n" }, "[d", vim.diagnostic.goto_prev, { noremap = true, silent = true, desc = "Go to previous diagnostic message" })
+-- vim.keymap.set({ "n" }, "]d", vim.diagnostic.goto_next, { noremap = true, silent = true, desc = "Go to next diagnostic message" })
 
 -- Save and load session
 vim.keymap.set({ "n" }, "<leader>ms", ":mksession! .session.vim<CR>", { noremap = true, silent = false, desc = "Save session" })
